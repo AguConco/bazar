@@ -1,0 +1,218 @@
+
+.detalle{
+    margin: 60px auto;
+    max-width: 1023px;
+    max-height: 500px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+.contenedorImg{
+    min-width: 50%;
+    height: calc(500px - 40px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedorImgLaterales{
+    max-height: 100%;
+    width: 120px;
+    overflow: hidden auto;
+}
+.contenedorImgLaterales::-webkit-scrollbar, .caracteristicas::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; 
+}
+
+.imgDetalle{
+    height: 100px;
+    margin: 5px 6px;
+}
+.imgLaterales{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.imgActual{
+    object-fit: contain;
+    height: 350px;
+    width: 350px;
+
+}
+
+.infoDetalle{
+    padding: 20px;
+    min-width: 50%;
+}
+.marca{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #aaa;
+}
+.nombre{
+    margin: 10px 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+}
+.precio{
+    font-size: 35px;
+    font-weight: 300;
+    position: relative;
+}
+.contenedorCaracteristicas{
+    position: relative;
+    margin: 10px 0;
+}
+.contenedorCaracteristicas button{
+    border: 1px solid #00000020;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: transparent;
+    position: relative;
+    z-index: 100;
+}
+.contenedorCaracteristicas ul{
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #00000020;
+    list-style: disc;
+    font-size: 14px;
+    position: absolute;
+    background: #fff;
+    overflow: hidden;
+    transform: translate(-220px,-140px) scale(0);
+    transition: .2s;
+    z-index: 10;
+    opacity: 0;
+}
+.contenedorCaracteristicas button:hover + ul{
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+}
+.contenedorCaracteristicas ul:hover{
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+}
+.contenedorCaracteristicas ul .caracteristica:nth-child(1){
+    margin-top: 15px;
+}
+.contenedorCaracteristicas ul .caracteristica:nth-last-child(1){
+    margin-bottom: 15px;
+}
+.caracteristica{
+    margin: 0 34px;
+}
+
+.variedad{
+    display: flex;
+    width: 456px;
+    margin: 30px 0;
+    min-height: 60px;
+    padding-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+.variedad::-webkit-scrollbar{
+    height: 8px;
+    width: 8px;
+}
+.variedad::-webkit-scrollbar-thumb{
+    background: #eee;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+.imgVariedad{
+    height: 70px;
+    width: 70px;
+    border: 1px solid ;
+    border-radius: 5px;
+    margin: 0 3px;
+    flex: none;
+}
+.imgVariedad img{
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+    margin: 5% 0 0 5%;
+}
+
+.terminarCompra{
+    background: #d66140;
+    color: #fff;
+    border-radius: 5px;
+    width: 220px;
+    font-size: 16px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    animation: terminarCompra .3s 1;
+    margin-right: 10px;
+}
+
+.eliminarItemCart{
+    color: #d66140;
+    background: #f5f5f5;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    animation: animacionBtn .3s 1;
+
+}
+
+@keyframes terminarCompra {
+    0%{
+        transform: scale(.95);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.detalleError{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+.detalleError h1{
+    border: 1px solid #d66140;
+    border-radius: 5px;
+    padding: 20px;
+    background: #d6614023;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    color: #d66140;
+    text-transform: uppercase;
+    width: 100%;
+}
+.detalleError p{
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.detalleError p span{
+    color: #1872fa;
+}
+.subtitulo{
+    font-weight: 300;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    font-size: 20px;
+}
