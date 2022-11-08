@@ -10,20 +10,20 @@ const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([])
     const [userId, setUserId] = useState('')
 
-    const isInCart = (producto) => cart.some(cartProducto => cartProducto.id === producto.id)
+    const isInCart = product => cart.some(cartProduct => cartProduct.id === product.id)
 
-    const addItem = (producto) =>{
-        if(isInCart(producto)){
-            let productoExistente = cart.find(e => e.id === producto.id)
-            productoExistente.cantidad += producto.cantidad   
+    const addItem = product =>{
+        if(isInCart(product)){
+            let productExist = cart.find(e => e.id === product.id)
+            productExist.quantity += product.quantity   
             setCart([...cart])
             localStorage.setItem('cart'+userId,JSON.stringify([...cart]))
         }else{
-            setCart([...cart, producto]) 
-            localStorage.setItem('cart'+userId,JSON.stringify([...cart, producto]))
+            setCart([...cart, product]) 
+            localStorage.setItem('cart'+userId,JSON.stringify([...cart, product]))
         }
     }
-    const removeItem = (id) =>{
+    const removeItem = id =>{
         let items = cart.filter(item => item.id !== id)
         setCart(items)
         localStorage.setItem('cart'+userId,JSON.stringify(items))
@@ -32,10 +32,10 @@ const CartProvider = ({children}) =>{
         setCart([])
         localStorage.removeItem('cart'+userId)
     }
-    const updateItem = (id,cantidad) =>{
-        let productoActualizar = cart.find(e => e.id === id)
-        productoActualizar.cantidad = cantidad 
-        productoActualizar.precioTotal = (productoActualizar.price || productoActualizar.buy_box_winner.price) * cantidad
+    const updateItem = (id,quantity) =>{
+        let updateProduct = cart.find(e => e.id === id)
+        updateProduct.quantity = quantity 
+        updateProduct.totalPrice = updateProduct.price.price_public * quantity
         setCart([...cart])
         localStorage.setItem('cart'+userId,JSON.stringify([...cart]))
 
@@ -47,7 +47,7 @@ const CartProvider = ({children}) =>{
         }
     }
 
-    const allItems = () => cart.reduce((acumulado, producto)=>acumulado + producto.cantidad , 0)
+    const allItems = () => cart.reduce((accumulate, product)=>accumulate + product.quantity , 0)
     
     useEffect(()=>{
         setCart([])

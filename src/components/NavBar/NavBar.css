@@ -26,13 +26,12 @@ header:hover{
     height: 120px !important;
 }
 
-.logo h2{
-    font-size: 20px;
-    font-weight: 300;
+.logo{
+    height: 30px;
 }
-.logo h2 span{
-    color: #d66140;
-    font-size: 22px;
+.logo img{
+    height: 100%;
+    object-fit: contain;
 }
 
 .buscador input{
@@ -77,31 +76,45 @@ header:hover{
     transform: rotateY(180deg);
 }
 
-.usuario > span{
-    color: #aaa;
-    font-size: 14px;
+.ingresar{
+    color: #d66140;
+    border-radius: 5px;
+    padding: 3px 7px;
+    background: #f5f5f5;
+}
+.crearCuenta{
+    background: #d66140;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 7px;
 }
 .usuario > div{
     position: relative;
-    top: -5px;
-    font-size: 14px;
 }
 .usuario > div > span{
+    position: relative;
+    top: -5px;
     color: #d66140;
     text-transform: capitalize;
     cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: inline-block;
-    width: 140px;
+    background: #f5f5f5;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.usuario > div > span:hover{
+    box-shadow: 0 3px 7px #00000010;
 }
 .usuario .perfilSeleccionado{
     color: #d6614033;
 }
 .perfil{
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
     padding: 15px 0;
     border: 1px solid #eee;
@@ -182,7 +195,7 @@ nav ul{
 }
 nav ul li a{
     margin: 0 10px;
-    font-size: 14px;
+    font-size: 15px;
     border-bottom: 2px solid transparent;
 }
 nav ul li a:hover{

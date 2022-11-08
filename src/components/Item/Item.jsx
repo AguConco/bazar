@@ -6,11 +6,11 @@ const Item = ({producto})=> {
     return(
         <Link to={'/item/'+producto.id} className="producto" title={producto.name}>
             <div className="imgProducto">
-                <img src={producto.pictures[0]} alt={producto.name} />
+                <img src={producto.picture} alt={producto.name} />
             </div>
             <div className="infoProducto">
                 <h2> {producto.name} </h2>
-                <h4> ${producto.price} </h4>
+                <h4> ${producto.price.price_public} </h4>
             </div>
         </Link>
     )

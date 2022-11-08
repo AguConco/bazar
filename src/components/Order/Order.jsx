@@ -15,12 +15,12 @@ const Order = () =>{
 
     useEffect(()=>{
         const db = getFirestore()
-        const order = doc(db,"orders",orderId)
-        getDoc(order).then(e => {
-            e._document === null ? setError(true) : setError(false)
-            setOrder(e)
-            setLoading(false)
-        })
+        // const order = doc(db,"orders",orderId)
+        // getDoc(order).then(e => {
+        //     e._document === null ? setError(true) : setError(false)
+        //     setOrder(e)
+        //     setLoading(false)
+        // })
         document.title = 'Order'
     },[])
 

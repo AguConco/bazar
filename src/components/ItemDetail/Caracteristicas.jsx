@@ -4,13 +4,13 @@ const Caracteristicas = ({caracteristica}) =>{
     const [btnEstilos,setBtnEstilos] = useState()
     
     useEffect(()=>{
-        caracteristica.hasOwnProperty('main_features') ? setBtnEstilos('block') : setBtnEstilos('none')
+        caracteristica ? setBtnEstilos('block') : setBtnEstilos('none')
     },[])
 
     return(
         <div>
             <button style={{display:btnEstilos}} className="btnCaracteristias">Caracteristicas</button>
-            <ul> {caracteristica.main_features?.map(caracteristica => (<li key={caracteristica} className="caracteristica"> {caracteristica} </li>))} </ul>
+            <ul> {caracteristica && caracteristica.split('|').map(caracteristica => (<li key={caracteristica} className="caracteristica"> {caracteristica} </li>))} </ul>
         </div>
     )
 }

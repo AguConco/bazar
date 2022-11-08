@@ -4,20 +4,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import ItemCountCart from "../ItemCount/ItemCountCart"
 
-const CartProducto = ({cartProducto, removeItem}) =>{
+const CartProducto = ({cartProduct, removeItem}) =>{
+    console.log(cartProduct)
     return(
-        <div className="productoCarrito">
-            <FontAwesomeIcon  icon={faTimes}  onClick={(() => removeItem(cartProducto.id))} className="removerProductoCarrito"/>
-            <div className="imgProductoCarrito">
-                <img src={cartProducto.pictures[0]} alt={cartProducto.name} />
-            </div>
-            <div className="contenedorNombre">
-                <Link to={'/item/'+cartProducto.id} title={cartProducto.name}> {cartProducto.name} </Link>
-            </div>
-            <ItemCountCart id={cartProducto.id} stock={cartProducto.available_quantity} cantidadActual={cartProducto.cantidad} />
-            <span className="productoCarritoPrecio" >$ {cartProducto.precioTotal} </span>
-        </div>
+        <tr className="productoCarrito">
+            <FontAwesomeIcon  icon={faTimes}  onClick={(() => removeItem(cartProduct.id))} className="removerProductoCarrito"/>
+            <td className="tableProducto">
+                <Link to={'/item/'+cartProduct.id} title={cartProduct.name}>
+                    <div className="imgProductoCarrito"><img src={cartProduct.picture} alt={cartProduct.name} /></div>
+                    {cartProduct.name} 
+                </Link>
+            </td>
+            <td className="tableCantidad"><ItemCountCart id={cartProduct.id} stock={cartProduct.available_quantity} currentAmount={cartProduct.quantity} /></td>
+            <td className="tablePrecio">$ {cartProduct.totalPrice}<span>c/u ${cartProduct.price.price_public}</span></td>
+        </tr>
     )
 }
 
-export default CartProducto
+export default CartProducto          

@@ -32,7 +32,7 @@ const Login = () =>{
     return(
         <section>
             <form onSubmit={e => validarForm(e)} className="formLogin">
-                <h1>Iniciar sesión</h1>
+                <h1>Ingresar</h1>
                 <div>
                     <input onKeyUp={e => {
                         setError('')
@@ -49,8 +49,8 @@ const Login = () =>{
                     <p onClick={()=>{setCambiarContrasena(true)}} className="olvidarContrasena">¿Olvidaste tu contraseña?</p>
                 </div>
                 {error && <span> {error} </span>}
-                <button type="submit">Iniciar sesión</button>
-                <p>¿No estás registrado? <Link to={'/register'}>Registrarse</Link> </p>
+                <button type="submit">Ingresar</button>
+                <p>¿No estás registrado? <Link to={'/register'}>Crear cuenta</Link> </p>
             </form>
             {cambiarContrasena && <PasswordReset setCambiarContrasena={setCambiarContrasena} /> }
         </section>  

@@ -10,23 +10,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavBar = () => {
 
-    const categorias = ['Celulares','Computadoras','Parlantes','Relojes']
     const {logOut,user} = useContext(UserContext)
-
     const [cerrarSesion, setCerrarSesion] = useState(false)
 
     return(
         <header >
             <div className="headerCenter">
-              <Link className="logo" to={'/'} ><h2><span>Tech</span>Shop</h2> </Link>
+              <Link className="logo" to={'/'} ><img src={'./pictures/Logo.svg'} alt={'Logo bazar regalería'} /></Link>
               <Buscador />
               <div className="contenedorInfoUsuario">
                   <Link to={'/cart'}><CartWidget /></Link>
                   <div className="usuario">
-                      <span>¡Hola!</span>
                       {user !== null ? 
                       <div>
-                        <span onClick={()=> setCerrarSesion(true)} className={cerrarSesion && "perfilSeleccionado"}> {user.displayName} </span>
+                        <span onClick={()=> setCerrarSesion(true)} className={cerrarSesion && "perfilSeleccionado"}> {user.displayName?.charAt(0)} </span>
                         <div className={ cerrarSesion ? 'perfil perfilVisible' : 'perfil perfilHidden'}>
                           <FontAwesomeIcon icon={faTimes} onClick={()=> setCerrarSesion(false)} />
                           <span> {user.displayName} </span>
@@ -40,12 +37,12 @@ const NavBar = () => {
                             }}>Cerrar sesión</button>
                         </div>
                       </div> : 
-                      <div><Link to={"/login"} >Iniciar</Link>|<Link to={"/register"} >Registro</Link></div>
+                      <div><Link to={"/login"} className="ingresar">Ingresar</Link><Link to={"/register"} className="crearCuenta">Crear Cuenta</Link></div>
                     }
                   </div>
               </div>
               <nav> 
-                  <ul> { categorias.map(e => <Categoria categoria={e} />) } </ul>
+                  <ul> <Categoria /> </ul>
               </nav>
             </div>
         </header>

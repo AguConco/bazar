@@ -3,33 +3,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons"
 import { CartContext } from "../../context/CartContext"
 
-const ItemCountCart = ({id,stock, cantidadActual}) =>{
+const ItemCountCart = ({id,stock, currentAmount}) =>{
 
-    const [cantidad, setCantidad] = useState(cantidadActual)
+    const [quantity, setQuantity] = useState(currentAmount)
     const {updateItem} = useContext(CartContext)
 
-    const cambiarCantidad = (e) =>{
+    const changeQuantity = (e) =>{
         if(e){
-            cantidad < stock && setCantidad(cantidad + 1)
+            quantity < stock && setQuantity(quantity + 1)
         }else{
-            stock !== 0 && cantidad > 1 && setCantidad(cantidad - 1)
+            stock !== 0 && quantity > 1 && setQuantity(quantity - 1)
         }
     }
 
     useEffect(()=>{
-        cantidadActual > stock && setCantidad(stock)
+        currentAmount > stock && setQuantity(stock)
 
-        updateItem(id,cantidad)
+        updateItem(id,quantity)
         
-    },[cantidad])
+    },[quantity])
 
     return(
         <div className="agregar contadorCarrito">
             <span className="stockProductoCarrito"> En stock: {stock} </span>
             <div>
-                <button onClick={()=>{ cambiarCantidad(false) }} type="button"><FontAwesomeIcon icon={faMinus} /></button>
-                <input type="text" value={cantidad} disabled/>
-                <button onClick={()=>{ cambiarCantidad(true) }} type="button"><FontAwesomeIcon icon={faPlus} /></button>
+                <button onClick={()=>{ changeQuantity(false) }} type="button"><FontAwesomeIcon icon={faMinus} /></button>
+                <input type="text" value={quantity} disabled/>
+                <button onClick={()=>{ changeQuantity(true) }} type="button"><FontAwesomeIcon icon={faPlus} /></button>
             </div>
         </div>
     )

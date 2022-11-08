@@ -1,7 +1,4 @@
-# Proyecto ReactJS - CoderHouse
-El proyecto es un e-commerce de productos tecnológicos. Computadoras, Parlantes, Relojes y Celulares.\
-Toda la información de los productos se obtuvo de MercadoLibre.\
-Se utiliza Firebase para la base de datos (Firestore) y el manejo de usuarios (Authentication).
+# Bazar y Regalería
 
 ## Instalar
 **React Router**

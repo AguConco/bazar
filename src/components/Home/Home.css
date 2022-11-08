@@ -1,0 +1,179 @@
+
+.categoryExposition h1{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 40px 0;
+    color: #575758; 
+}          
+.categoryExpositionDisplay{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    grid-template-areas: "cocina mate regaleria"
+                         "baño   mate juguete";
+}   
+.contenedorSpan{ 
+    margin-top: 15px; 
+}   
+.contenedorSpan span:nth-child(1){ 
+    font-size: 25px;
+    display: inline-block; 
+}
+.contenedorSpan span:nth-child(2){ 
+    font-size: 20px;
+    display: inline-block; 
+}
+
+.categoryDisplay{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #fff;
+    padding: 30px; 
+}
+.categoryDisplay h2{
+    position: relative;
+}
+.categoryDisplay h2 div{
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 50px;
+  background: #d66140; 
+}
+.categoryDisplay a{ 
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 3px 7px;
+    border-radius: 5px;    
+    position: absolute;
+    border: 1px solid #d66140;
+    color: #d66140;
+    background: #fff; 
+    font-size: 15px
+}
+.categoryDisplay a:hover{
+    background: #d66140;
+    color: #fff; 
+}
+.categoryDisplay img{
+    position: absolute;
+    pointer-events: none; 
+}
+.cc{
+    grid-area: cocina; 
+}
+.cc img{
+    top: 35px;
+    right: -15px; 
+    transform: scale(.8);
+}
+.cmt{
+    grid-area: mate; 
+}
+.cmt img{
+    transform: rotateY(180deg) scale(.85);
+    top: 15px;
+    right: -55px; 
+}
+.cr{
+    grid-area: regaleria; 
+}
+.cr img{
+    top: 10px;
+    right: 15px; 
+    transform: scale(.8);
+}
+.clb{
+    grid-area: baño; 
+}
+.clb img{
+    top: 50px;
+    right: 0; 
+    transform: scale(.75);
+}
+.cj{
+    grid-area: juguete; 
+}
+.cj img{
+    top: 15px;
+    right: -45px; 
+    transform: rotateY(180deg) scale(.8);
+}
+
+
+.sectionBrands {
+    margin: 70px auto 90px;
+    width: 1300px; 
+}
+.sectionBrands > div {
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    position: relative; 
+}
+.sectionBrands > div h3 {
+    text-transform: uppercase;
+    color: #575758;
+    font-size: 23px;
+    margin: 0 0;
+    text-align: center;
+    position: relative;
+    z-index: 100; 
+}
+.containerBrands {
+    display: flex; 
+}
+.containerBrands a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 20px; 
+}
+.containerBrands a img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    transition: .2s; 
+}
+.containerBrands a img:hover {
+    transform: scale(1.05); 
+}
+.rigolleau img {
+    top: -10px; 
+}
+.carol img {
+    top: 5px; 
+}
+.tramontina img {
+    top: 5px; 
+}
+.circle {
+    border: 13px solid #d66140;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+    height: 150px;
+    width: 150px; 
+}
+.c1 {
+    left: -70px;
+    top: 50px; 
+}
+.c2 {
+    left: 420px;
+    top: -125px; 
+}
+.c3 {
+    right: -80px;
+    top: 70px; 
+}
+  

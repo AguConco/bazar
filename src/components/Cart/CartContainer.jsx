@@ -23,10 +23,15 @@ const CartContainer = () =>{
                         <div className={vaciarCarrito ? 'menuOpcionesCarrito menuVisible' : 'menuOpcionesCarrito menuHidden'}>
                             <button onClick={() => cart.length !== 0 && clear()} className="vaciar" >Vaciar el carrito</button>
                         </div>
-                    </div>
-                    <div className="contenedorProductoCarrito"> 
-                        {cart.map(e => (<CartProducto cartProducto={e} removeItem={removeItem} />))}
-                    </div>
+                    </div> 
+                    <table cellSpacing={0}>
+                        <tr className="headerTable">
+                            <th className="tableProducto">PRODUCTO</th>
+                            <th className="tableCantidad">CANTIDAD</th>
+                            <th className="tablePrecio">PRECIO</th>
+                        </tr>
+                        {cart.map(e => (<CartProducto cartProduct={e} removeItem={removeItem} />))}
+                    </table>
                 </div>
                 }
             </div>

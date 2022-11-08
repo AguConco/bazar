@@ -52,6 +52,7 @@ section{
     margin-bottom: 13px;
     padding: 10px;
     border-radius: 5px;
+    width: 760px;
 }
 
 .opcionesCarrito{
@@ -99,46 +100,82 @@ section{
     background: #f9f9f9;
 }
 
-.contenedorProductoCarrito{
-    width: 760px;
+table{
+    border: 1px solid #eee;
     background: #fff;
+    padding: 15px;
+    max-width: 760px;
     border-radius: 5px;
 }
-.productoCarrito:nth-last-child(1){
+
+.headerTable{
+    height: 45px;
+}
+.headerTable th{
+    font-weight: 900;
+    font-size: 14px;
+    padding: 10px;
+}
+table tr:nth-last-child(1){
     border: none;
 }
-.productoCarrito{
+table tr:nth-child(1){
+    border: none;
+}
+table td{
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+table tr{
     width: 100%;
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 20px;
-    border-bottom: 1px solid #f5f5f5;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #eee;
 }
+
 .imgProductoCarrito{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
 }
 .imgProductoCarrito img{
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
-.contenedorNombre{
-    width: 350px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin: 0 15px 25px;
+.tableProducto{
+    text-align: start;
+    width: 380px;
+    border: none;
+
 }
-.contenedorNombre a{
-    font-size: 15px;
+.tableProducto a{
+    display: flex;
+    justify-content: start;
 }
-.productoCarrito a:hover{
-    text-decoration: underline #aaa;
+.tableCantidad{
+    text-align: start;
+    width: 130px; 
+    border: none;
+
+}
+.tablePrecio{
+    width: 220px;
+    text-align: end;
+    align-items: flex-end;
+    justify-content: center; 
+    font-size: 18px;
+    border: none;
+    flex-direction: column;
+}
+.tablePrecio span{
+    color:#aaa;
+    font-size: 12px;
 }
 .removerProductoCarrito{
     position: absolute;
@@ -147,14 +184,10 @@ section{
     cursor: pointer;
     display: none;
 }
-.productoCarrito:hover .removerProductoCarrito{
+table tr:hover .removerProductoCarrito{
     display: block;
 }
-.productoCarritoPrecio{
-    width: 120px; 
-    text-align: end;
-    font-size: 18px;
-}
+
 
 .contenedorDetalleCarrito{
     width: 250px;

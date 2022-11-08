@@ -1,0 +1,85 @@
+footer {
+    margin-top: 120px;
+    width: 100%;
+    padding: 20px 0;
+    background: #22222c; 
+}
+footer > div {
+    width: 1023px;
+    margin: auto; 
+}
+.infoFooter {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  margin: 30px 10%;
+  color: #cecece;
+  font-size: 15px; 
+}
+
+footer h3 {
+  display: inline-block;
+  color: #cecece;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: .5px solid #d66140;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase; 
+}
+.logoFooter {
+  width: 120px; 
+  display: block;
+  margin: 30px auto 60px;
+}
+.logoFooter a {
+  display: block;
+  width: 100%; 
+}
+.logoFooter a img {
+  object-fit: contain;
+  width: 100%; 
+}
+.redirects {
+  display: flex;
+  justify-content: space-around;
+}
+.redirects li {
+  margin: 5px 0; 
+}
+.redirects a {
+  color: #aaa; 
+}
+.redirects a:hover {
+  color: #fff; 
+}
+.redirects > div:nth-child(3) ul {
+  display: flex; 
+  padding-top: 10px;
+}
+.redirects > div:nth-child(3) ul li {
+  margin: 0 5px; 
+}
+.redirects > div:nth-child(3) ul li a {
+  display: flex;
+  height: 35px;
+  width: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #aaa; 
+}
+.redirects > div:nth-child(3) ul li a svg{
+  height: 18px;
+  width: 18px;
+}
+.redirects > div:nth-child(3) ul li a svg path {
+  fill: #aaa;
+}
+.redirects > div:nth-child(3) ul li a:hover {
+  background: #fff;
+  border: 1px solid #fff; 
+}
+.redirects > div:nth-child(3) ul li a:hover svg path {
+  fill: #22222c; 
+}

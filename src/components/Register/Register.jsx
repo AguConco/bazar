@@ -74,7 +74,7 @@ const Register = () =>{
   return(
     <section>
       <form onSubmit={e => validarForm(e)} className="formRegister">
-        <h1>Registrar</h1>
+        <h1>Crear cuenta</h1>
         <div>
           <input onKeyUp={e => validarNombre(e.target.value.trim())} type="text" id="nombre" autoComplete="off"/>
           <label htmlFor="nombre">Nombre y Apellido</label>
@@ -88,8 +88,8 @@ const Register = () =>{
           <label htmlFor="contrasena">Contraseña</label>
         </div>
         {error && <span> {error} </span>}
-        <button type="submit">Registrarse</button>
-        <p>¿Ya estás registrado? <Link to={'/login'}>Iniciar sesión</Link></p>
+        <button type="submit">Crear</button>
+        <p>¿Ya estás registrado? <Link to={'/login'}>Ingresar</Link></p>
       </form>
     </section>
   )

@@ -1,60 +1,52 @@
 import React, { useState, useEffect, useContext } from "react"
 import ItemCount from '../ItemCount/ItemCount'
-import ImgDetalle from "./ImgDetalle"
 import Caracteristicas from "./Caracteristicas"
 import './ItemDetail.css'
 import { Link } from "react-router-dom"
 import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({detalle}) =>{ 
-
+    console.log(detalle)
     const {addItem} = useContext(CartContext)
 
-    const [imgActual, setImgActual] = useState('')
-    const [imgLaterales, setImgLaterales] = useState([])
-    const [precio, setPrecio] = useState(0)
-    const [stock, setStock] = useState(0)
-    const [nombre, setNombre] = useState('')
-    const [marca, setMarca] = useState('')
-    const [cantidad, setCantidad] = useState(0)
+    const [picture, setPicture] = useState('')
+    const [price, setPrice] = useState(0)
+    const [availableQuantity, setAvailableQuantity] = useState(0)
+    const [name, setName] = useState('')
+    const [quantity, setQuantity] = useState(0)
     const [id, setId] = useState('')
+    const [mainFeatures, setMainFeatures] = useState()
 
     const onAdd = (c) =>{
-        setCantidad(c)
-        const producto = {...detalle, cantidad: c, precioTotal: precio * c}
-        addItem(producto)
+        setQuantity(c)
+        const product = {...detalle, quantity: c, totalPrice: price * c}
+        addItem(product)
     }
 
     useEffect(()=>{
-        setCantidad(0)
+        setQuantity(0)
         setId(detalle.id)
-        setImgActual(detalle.pictures[0])
-        setImgLaterales(detalle.pictures)
-        setPrecio(detalle.price)
-        setStock(detalle.available_quantity)
-        setNombre(detalle.name)
-        setMarca(detalle.brand)
-
+        setPicture(detalle.picture)
+        setPrice(detalle.price.price_public)
+        setAvailableQuantity(detalle.available_quantity)
+        setName(detalle.name)
+        setMainFeatures(detalle.main_features)
         document.title = detalle.name
     },[detalle])
 
     return(
         <div key={id} className="detalle">
             <div className="contenedorImg">
-                <div className="contenedorImgLaterales">
-                    {imgLaterales.map(img =>( <ImgDetalle src={img} alt={nombre} setImgActual={setImgActual} />))}
-                </div>
-                <img className="imgActual" src={imgActual} alt={nombre} />
+                <img className="imgActual" src={picture} alt={name} />
             </div>
             <div className="infoDetalle">
-                <span className="marca"> {marca} </span>
-                <h1 className="nombre"> {nombre} </h1>
-                <h4 className="precio"> ${precio} </h4>
+                <h1 className="nombre"> {name} </h1>
+                <h4 className="precio"> ${price} </h4>
                 <div className="contenedorCaracteristicas">
-                    <Caracteristicas caracteristica={detalle} />
+                    <Caracteristicas caracteristica={mainFeatures} />
                 </div>
                 <div className="variedad"></div>  
-                {cantidad === 0 ? <ItemCount stock={stock} iniciar={1} onAdd={onAdd} /> : <Link className="terminarCompra" to={'/cart'}>Terminar mi compra</Link>}
+                {quantity === 0 ? <ItemCount stock={availableQuantity} iniciar={1} onAdd={onAdd} /> : <Link className="terminarCompra" to={'/cart'}>Terminar mi compra</Link>}
             </div>
         </div>
     ) 
